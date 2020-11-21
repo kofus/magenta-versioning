@@ -1,0 +1,12 @@
+{
+    "name": "kofus/magenta-versioning",
+    "type": "library",
+    
+    "autoload": {
+        "psr-0": {
+            "Kofus\\Deepl\\": "src/Kofus/Versioning/"
+        },
+        "classmap" : ["Kofus/Versioning/Module.php"]
+    }
+}
+
