@@ -69,33 +69,102 @@ class CommitEntity implements Node\NodeInterface
 	}
 	
 	/**
-	 * @ORM\Column(type="boolean", nullable=true)
+	 * @ORM\Column(nullable=true)
 	 */
-	protected $incrementX = false;
+	protected $keyX;
+	
+	public function setKeyX($value)
+	{
+	    $this->keyX = $value; return $this;
+	}
+	
+	public function getKeyX()
+	{
+	    return $this->keyX;
+	}
+	
 	/**
-	 * @ORM\Column(type="boolean", nullable=true)
+	 * @ORM\Column(nullable=true)
 	 */
-	protected $incrementY = false;
+	protected $keyY;
+	
+	public function setKeyY($value)
+	{
+	    $this->keyY = $value; return $this;
+	}
+	
+	public function getKeyY()
+	{
+	    return $this->keyY;
+	}
+	
 	/**
-	 * @ORM\Column(type="boolean", nullable=true)
+	 * @ORM\Column(type="integer")
 	 */
-	protected $incrementZ = true;
+	protected $productId = 1;
 	
-	
-	public function incrementX($value=true)
+	public function setProductId($value)
 	{
-	    $this->incrementX = $value; return $this;
+	    $this->productId = $value; return $this;
 	}
 	
-	public function incrementY($value=true)
+	public function getProductId()
 	{
-	    $this->incrementY = $value; return $this;
+	    return $this->productId;
 	}
 	
-	public function incrementZ($value=true)
+	/**
+	 * @ORM\Column(type="integer")
+	 */
+	protected $x = 0;
+	
+	public function setX($value)
 	{
-	    $this->incrementZ = $value; return $this;
+	    $this->x = $value; return $this;
 	}
+	
+	public function getX()
+	{
+	    return $this->x;
+	}
+	
+	/**
+	 * @ORM\Column(type="integer")
+	 */
+	protected $y = 0;
+	
+	public function setY($value)
+	{
+	    $this->y = $value; return $this;
+	}
+	
+	public function getY()
+	{
+	    return $this->y;
+	}
+	
+	/**
+	 * @ORM\Column(type="integer")
+	 */
+	protected $z = 0;
+	
+	public function setZ($value)
+	{
+	    $this->z = $value; return $this;
+	}
+	
+	public function getZ()
+	{
+	    return $this->z;
+	}
+	
+	public function getVersion()
+	{
+	    return $this->x . '.' . $this->y . '.' . $this->z;
+	}
+	
+	
+	
 	
 	/**
 	 * @ORM\Column(type="datetime")
@@ -130,7 +199,7 @@ class CommitEntity implements Node\NodeInterface
 	
 	public function getNodeType()
 	{
-		return 'VERC';
+		return 'VINGC';
 	}
 	
 	public function __toString()

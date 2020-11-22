@@ -1,0 +1,27 @@
+<h1>Releases</h1>
+<?php if ($this->entities) : ?>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Typ</th>
+			<th>Token</th>
+			<th>Titel</th>
+		</tr>
+	</thead>
+	<?php foreach ($this->entities as $entity) : ?>
+		<tr>
+			<td>
+				<?php echo $this->escapeHtml($entity->getReleaseType()) ?>
+			</td>
+			<td>
+				<?php echo $this->escapeHtml($entity->getToken()) ?>
+			</td>
+			<td>
+				<span class="editable" id="title" data-pk="<?php echo $this->escapeHtmlAttr($entity->getNodeId()) ?>" data-emptyText="Titel" data-type="text" data-url="<?php echo $this->url('kofus_versioning', array('controller' => 'release', 'action' => 'edit-ajax', 'id' => $entity->getNodeId())) ?>"><?php echo $this->escapeHtml($entity->getTitle()) ?></span>
+			</td>
+		</tr>
+	<?php endforeach ?>
+</table>
+<?php else : ?>
+	<p>Keine Einträge.</p>
+<?php endif ?>

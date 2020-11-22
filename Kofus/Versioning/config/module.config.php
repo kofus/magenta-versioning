@@ -6,12 +6,13 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Kofus\Versioning\Controller\Index' => 'Kofus\Versioning\Controller\IndexController',
+            'Kofus\Versioning\Controller\Commit' => 'Kofus\Versioning\Controller\CommitController',
+            'Kofus\Versioning\Controller\Release' => 'Kofus\Versioning\Controller\ReleaseController',
         )
     ),
     'user' => array(
         'controller_mappings' => array(
-            'Kofus\Versioning\Controller\Index' => 'Kofus.Versioning',
-            
+            'Kofus\Versioning\Controller\Index' => 'Kofus.Versioning'
         )
     ),
     
@@ -46,6 +47,13 @@ return array(
             'KofusVersioningService' => 'Kofus\Versioning\Service\VersioningService',
         )
     ),
+    
+    'view_helpers' => array(
+        'invokables' => array(
+            'versioning' => 'Kofus\Versioning\View\Helper\VersioningHelper',
+        )
+    ),
+    
     
     'view_manager' => array(
         'controller_map' => array(
